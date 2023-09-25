@@ -1,23 +1,35 @@
-class Solution {
-public:
-    void sub(int i, vector<int>& nums, vector <int>& temp, vector<vector<int>>& ans){
-        if(i == nums.size()){
-            ans.push_back(temp);
-        }
-        else{
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-            temp.push_back(nums[i]);
-            sub(i+1,nums,temp,ans);
 
-            temp.pop_back();
-            sub(i+1,nums,temp,ans);
+
+int main()
+{
+    long long int a; cin >> a;
+    long long int s; cin >> s;
+    long long int t = s - a;
+
+    string s1 = to_string(a);
+    string s2 = to_string(t);
+
+    sort(s1.begin(),s1.end());
+    sort(s2.begin(),s2.end());
+
+    
+        if(s1 == s2)
+        {
+            cout << "yes" << endl;
         }
-    }
-    vector<vector<int>> subsets(vector<int>& nums) {
-        
-        vector<vector<int>> ans;
-        vector <int> temp;
-        sub(0,nums,temp,ans);
-        return ans;
-    }
-};
+        else
+        {
+            cout << "no" << endl;
+        }
+    
+    
+
+    
+     
+
+}
